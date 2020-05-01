@@ -25,14 +25,11 @@ try {
     }
 }
 catch (err) {
-    logr('heyyy')
-    logr()
     if(err.code === 'ENOENT') {
         if(!fs.existsSync(settingsJsonPath)) {
             fs.mkdirSync(settingsJsonPath)
             fs.writeFileSync(settingsJsonFilePath, JSON.stringify(defaultSettings), {flag: "w"})
         }
-        // fs.writeFileSync(settingsJsonFilePath, JSON.stringify(defaultSettings), {flag: "wx"})
         settingsData = defaultSettings
     }
 }
