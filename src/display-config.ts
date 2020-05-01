@@ -12,7 +12,7 @@ const DisplayConfig = () => {
 
     const headerLength = configHeaderText.length
 
-    const sideSpacingLength = 2
+    const sideSpacingLength = 7
 
     const appSettingKeys = Object.keys(configurableSettings)
     const appSettingKeysToDisplay = appSettingKeys.filter((k: string) => k !== "configHeaderText")

@@ -14,8 +14,6 @@ const platform = os.platform()
 
 const settingsJsonFilePath = `${__dirname}/config/settings.json`
 
-logr(platform)
-
 if (args[0] === "--config") {
     if (args[1]) {
         if (args[1] === "show") {
@@ -78,6 +76,22 @@ else {
                     logr("Password has been copied to clipboard!")
                 }
             })
+        }
+        else if(platform === "win32") {
+            if(options.s) {
+                logr("Unable to copy passwords to clipboard that include symbols")
+            }
+            else {
+                exec(`echo ${pw} | clip`, (err: any) => {
+                    if (err) {
+                        logr("Error: an error occurred while copying password to clipboard")
+                        logr(err)
+                    }
+                    else {
+                        logr("Password has been copied to clipboard!")
+                    }
+                })
+            }
         }
     }
 }
