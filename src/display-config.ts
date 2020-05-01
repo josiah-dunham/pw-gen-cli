@@ -1,11 +1,11 @@
 import { appSettings } from './settings'
 import { logr, typeChecks } from './helpers/utils'
 
-interface IDisplayConfig {
+interface IDisplayConfigOptions {
     header?: string
 }
 
-const DisplayConfig = () => {
+const DisplayConfig = (options?: IDisplayConfigOptions) => {
     const { configurableSettings } = appSettings
 
     const { configHeaderText } = appSettings.configurableSettings
