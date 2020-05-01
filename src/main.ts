@@ -14,6 +14,8 @@ const platform = os.platform()
 
 const settingsJsonFilePath = `${__dirname}/config/settings.json`
 
+logr(platform)
+
 if (args[0] === "--config") {
     if (args[1]) {
         if (args[1] === "show") {
