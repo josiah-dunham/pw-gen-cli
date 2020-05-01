@@ -1,0 +1,17 @@
+{
+  "name": "ts-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && node dist/main.js",
+    "happy": "tsc && node dist/happy-number.js"
+  },
+  "dependencies": {
+    "@types/node": "^12.0.0",
+    "typescript": "^3.8.3"
+  },
+  "bin": {
+    "pw-gen": "./dist/main.js"
+  }
+}
